@@ -7,7 +7,7 @@
     <title>graphSub</title>
     <title>Animating Changes in Force Diagram</title>
     <script src="static/js/d3.v3.js"></script>
-    <link rel="stylesheet" href="static/css/jquery-ui.css">
+    <link rel="stylesheet" href="./jquery-ui.css">
     <script src="static/js/jquery-1.10.2.js"></script>
     <script src="static/js/jquery-ui.js"></script>
     <style>
@@ -33,6 +33,11 @@
             border-style: solid;
             border-width: 2px;
             border-color: white;
+            
+        }
+
+        .combobox-container {
+            display: inline-block;
         }
 
         body {
@@ -45,9 +50,16 @@
   <label for="search">Search: </label>
   <input id="search">
 </div>
+<div class="ui-widget combobox-container">
+    <label for="combobox">Select dataset: </label>
+    <select id="combobox">
+        <option value="data/diseases.json">Diseases</option>
+        <option value="data/eurosis.json">Eurosis</option>
+        <option value="data/school.json">School</option>
+    </select>
+</div>
 <div id="chart">    
 </div>
 </body>
-<script src="static/js/g2j4d3.js"></script>
 <script src="static/js/graphSub.js"></script>
 </html>
