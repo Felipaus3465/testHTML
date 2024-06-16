@@ -206,7 +206,7 @@
                             .attr("id", "svg")
                             .call(d3.behavior.zoom())
                             .attr("pointer-events", "all")
-                            .attr("viewBox", "0 0 " + 1000 + " " + 500)
+                            .attr("viewBox", "0 0 " + 2000 + " " + 1500) //tamano de nodos
                             .attr("perserveAspectRatio", "xMinYMid")
                             .append('svg:g');
 
@@ -293,6 +293,7 @@
                             })
                             .attr("stroke", "grey")
                             .attr("opacity", "0.5")
+                            .attr()
                             .attr("class", "link")
                             .attr("marker-end", "url(#suit)");
 
@@ -525,8 +526,8 @@ function loadData(dataset) {
 
 
         var chart = d3.graphSub()
-            .width(760)
-            .height(500)
+            .width(1920)
+            .height(1080)
             .hops(2);
 
         d3.select("#chart")
