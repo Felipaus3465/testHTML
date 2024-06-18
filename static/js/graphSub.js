@@ -524,16 +524,38 @@ function loadData(dataset) {
 
         document.getElementById('chart').innerHTML = '';
 
+        var svg = d3.select("#chart").append("svg")
+            .attr("width", 1920)
+            .attr("height", 1080);
+
+        var g = svg.append("g");
 
         var chart = d3.graphSub()
             .width(1920)
             .height(1080)
             .hops(2);
 
-        d3.select("#chart")
-            .datum(graph)
+            g.datum(graph)
             .call(chart);
+
+
+        var zoom = d3.behavior.zoom()
+            .scaleExtent([1, 10])
+            .on("zoom", function() {
+                g.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
+            });
+            
+        svg.call(zoom);
+
+        window.currentZoom = zoom;
     });
 }
+
+d3.select("#resetZoom").on("click", function() {
+    d3.select("#chart svg")
+        .transition()
+        .duration(750)
+        .call(window.currentZoom.scale(1).translate([0, 0]).event);
+});
 
 
