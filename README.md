@@ -2,9 +2,8 @@
 # Visualización de información
 
 _Integrantes:_
-- David Blanco: 2020053806
+- Luis David Blanco Láscarez: 2020053806P
 - Luis Felipe Calderón Pérez: 2021048663
-
 El objetivo de este proyecto es crear tres diferentes visualizaciones de redes utilizando un modelo cliente-servidor, en donde el servidor generará el modelo geométrico de la red y el cliente permitirá visualizar e interactuar con dicho modelo.
 
 ## Introduccion
@@ -80,9 +79,11 @@ Estos son algunos ejemplos de fuentes de datos que pueden ser utilizadas a la ho
 
 #### Modelo cliente-servidor
 
-La pagina web está alojada en Netlify, pero los archivos fuentes, incluyendo los datos, las funciones de parseo de datos, el archivo index.html y un archivo con varias funciones de D3 que hacen el gráfico de grafo, están en un repositorio de GitHub. Para que Netlify pueda desplegra la página web, se realiza un deploy desdo Netlify sobre el repositorio de GitHub. Este deploy toma todos los archivos necesarios y gestiona todas las dependencias del index.html, así como las funciones y otros requerimientos para desplegar la web, es decir el propio Netlify es como si convirtiera esos archivos en los archivos fuentes que necesita. El sitio web se puede acceder a través del enlace personalizado: https://proyecto3visualizacion.netlify.app/. El repositorio de GitHub se encuentra en: https://github.com/Felipaus3465/testHTML.
+La pagina web está alojada en Netlify, pero los archivos fuentes, incluyendo los datos, las funciones de parseo de datos, el archivo index.html y un archivo con varias funciones de D3 que hacen el gráfico de grafo, están en un repositorio de GitHub. Para que Netlify pueda desplegra la página web, se realiza un deploy desdo Netlify sobre el repositorio de GitHub. Este deploy toma todos los archivos necesarios y gestiona todas las dependencias del index.html, así como las funciones y otros requerimientos para desplegar la web, es decir el propio Netlify es como si convirtiera esos archivos en los archivos fuentes que necesita. 
+- El sitio web se puede acceder a través del enlace personalizado: https://proyecto3visualizacion.netlify.app/. 
+- El repositorio de GitHub se encuentra en: https://github.com/Felipaus3465/testHTML.
 
-
+![netlify](images/netlify.png)
 
 #### funcion transformer.py
 
@@ -127,8 +128,13 @@ En esta funcion, se crea el force directed graph utilizando los conjuntos de dat
 
 ## Conclusiones
 
-Respecto a lo mencionado, la utilización de un modelo cliente-servidor permitió una mayor modularidad y flexibilidad en el desarrollo del proyecto. El uso de la técnica de grafo de fuerzas (force-directed layout) con D3, nos proporcionó una comprensión profunda de cómo estructurar y visualizar redes complejas. Ádemas, desplegar de la página web en Netlify a partir de un repositorio de GitHub mostró eficacia de las plataformas de integración continua y despliegue continuo para la gestión y actualización del proyecto.
-
+* La utilización de un modelo cliente-servidor permitió una mayor modularidad y flexibilidad en el desarrollo del proyecto. 
+* El uso de la técnica de grafo de fuerzas (force-directed layout) con D3, nos proporcionó una comprensión profunda de cómo estructurar y visualizar redes complejas. 
+* Desplegar de la página web en Netlify a partir de un repositorio de GitHub mostró eficacia de las plataformas de integración continua y despliegue continuo para la gestión y actualización del proyecto.
+* La adición del buscador de nodos con función de autocompletar no solo mejoró la eficiencia en la localización de nodos específicos, sino que también demostró ser una herramienta valiosa para usuarios que buscan la información rápidamente. Esta funcionalidad mejoro la accesibilidad de las visualizaciones.
+* La creación de la función transformer.py para estructurar los datos JSON fue esencial para la correcta visualización con D3.js
+* La implementación de funcionalidades interactivas como el zoom, pan y la consulta de etiquetas de nodos permite a los usuarios analizar los datos de manera más efectiva, facilitando una mejor comprensión de las relaciones y patrones en los conjuntos de datos.
+* La técnica de grafo de fuerzas demostró ser efectiva para representar visualmente las redes.
 ## Bibliografia:
 
 Stewart, L. (2024, March 13). Datos primarios frente a datos secundarios: Distinciones clave y usos. ATLAS.ti. https://atlasti.com/es/research-hub/datos-primarios-secundarios
