@@ -45,16 +45,89 @@ Estos se pueden definir como: “se obtienen originalmente y se documentan por p
 
 #### Fuentes de datos secundarios
 
-Según Lauren Steward, se pueden definir como datos que se basan en fuentes ya existentes.
+Según Lauren Steward, se pueden definir como datos que se basan en fuentes ya existentes. Se ofrece un enfoque mas accesible, y sus datos se pueden encontrar en los siguientes recursos:
+
+- Bibliografías
+- Informes gubernamentales e institucionales
+- Registros históricos
+- Registros públicos y estadísticas
+
+#### Otras fuentes de datos enfocadas a la visualización de información desde un punto de vista computacional:
+
+- Bases de datos relacionales:
+    * MySQL
+    * PostgreSQL
+
+- Bases de datos no relacionales:
+    * MongoDB
+    * Redis
+
+- APIs
+    * API de google maps para la obtención de datos geográficos
+
+- Archivos de datos:
+    * JSON
+    * CSV
+
+- Big data:
+    * Registros de comunicaciones
+    * Datos generados por usuarios
+
+Estos son algunos ejemplos de fuentes de datos que pueden ser utilizadas a la hora de realizar una investigación, proyecto, análisis u otra acción que requiera de información. Siempre es importante utilizar fuentes de datos genuinas y confiables, ya que aporta valor a los resultados.
+
 
 ## Descripción detallada y explicación de las secciones principales del documento.
+
+#### Modelo cliente-servidor
+
 La pagina web está alojada en Netlify, pero los archivos fuentes, incluyendo los datos, las funciones de parseo de datos, el archivo index.html y un archivo con varias funciones de D3 que hacen el gráfico de grafo, están en un repositorio de GitHub. Para que Netlify pueda desplegra la página web, se realiza un deploy desdo Netlify sobre el repositorio de GitHub. Este deploy toma todos los archivos necesarios y gestiona todas las dependencias del index.html, así como las funciones y otros requerimientos para desplegar la web, es decir el propio Netlify es como si convirtiera esos archivos en los archivos fuentes que necesita. El sitio web se puede acceder a través del enlace personalizado: https://proyecto3visualizacion.netlify.app/. El repositorio de GitHub se encuentra en: https://github.com/Felipaus3465/testHTML.
+
+
+
+#### funcion transformer.py
+
+La función se encarga de estructurar los archivos JSON para una manipulación más sencilla con el código generado con d3.js. Para esto, se coloca en inputdata.json el archivo que se quiere modificar, y al correr la función tranformer.py, se obtiene a través de outputdata.json el archivo en la estructura deseada
+
+![transformer](images/transformer.png)
 
 Las funciones de parseo reciben un json con los datos recibidos por el profesor y usa una lista de colores para que en la visualizacion se muestre si un nodo pertenece o no a un grupo, ademas tiene una funcion auxiliar getTargetNode, que determina la posición real dentro del archivo json y así realiza correctamente los enlaces entre los nodos.
 
+![getTargetNode](images/getTargetNode.png)
+
+#### index.html
+
+Se utiliza una estructura sencilla y fácil de visualizar, con el objetivo de que el usuario tenga una experiencia sin complicaciones a la hora de utilizar el programa. Existen 3 elementos:
+
+- **Buscador de nodos:** Decidimos crear adicionalmente a los requerimientos del proyecto, un buscador de nodos mediante nombre. Es muy útil y indispensable ya que de esta manera se puede conseguir la ubicación de un nodo sin la necesidad de buscarlo manualmente mediante acercamientos y extensión del grafo. Aparte, esta funcionalidad incluye una característica de autocompletar, en donde se escribe la primera letra del nodo y aparecen los "match" con dichas letras. 
+
+![searchbar](images/searchbar.png)
+
+- **Seleccionador de conjunto de datos:** Se tiene un combobox, en el cual el usuario puede seleccionar alguno de los conjuntos de datos disponibles para la visualización del mismo.
+
+![dataset](images/dataset.png)
+
+- **Chart:** Se dibuja el grafo en este espacio, utilizando el dataset seleccionado por el usuario mediante el uso de d3.js.
+
+![chart](images/chart.png)
+
+
+#### graph.js
+
+En esta funcion, se crea el force directed graph utilizando los conjuntos de datos JSON y representandolos en el index.html anteriormente mencionado. Esta funcion se encarga de crear el modelo utilizando "link", "source", "target", "name" y "group", datos que se recogen del JSON. 
+
+**Generación de links con los nodos:** Lógica del programa mediante el uso de arrays para encontrar los nodos que se ubican juntos.
+![links](images/links.png)
+
+**Estética del chart:** Se establecen parámetros para el dibujo del chart mediante d3.js
+![aesthetics](images/aestethics.png)
+
+**Implementación de lectura del JSON, selección del dataset y acercamientos:** Funciones para leer el JSON, eliminar el chart anterior si se elige uno nuevo y integrar el uso de zoom para visualizar los nodos.
+
+![function](images/function.png)
+
 ## Conclusiones
 
-Respecto a lo mencionado, la utilización de un modelo cliente-servido permitió una mayor modularidad y flexibilidad en el desarrollo del proyecto. El uso de la técnica de grafo de fuerzas (force-directed layout) con D3, nos proporcionó una comprensión profunda de cómo estructurar y visualizar redes complejas. Ádemas, desplegar de la página web en Netlify a partir de un repositorio de GitHub mostró eficacia de las plataformas de integración continua y despliegue continuo para la gestión y actualización del proyecto.
+Respecto a lo mencionado, la utilización de un modelo cliente-servidor permitió una mayor modularidad y flexibilidad en el desarrollo del proyecto. El uso de la técnica de grafo de fuerzas (force-directed layout) con D3, nos proporcionó una comprensión profunda de cómo estructurar y visualizar redes complejas. Ádemas, desplegar de la página web en Netlify a partir de un repositorio de GitHub mostró eficacia de las plataformas de integración continua y despliegue continuo para la gestión y actualización del proyecto.
 
 ## Bibliografia:
 
